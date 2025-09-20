@@ -1,86 +1,81 @@
 # SVG Image Filter
 
-A web application that applies halftone effects to images using client-side SVG filters. The app processes images in real-time with no server required, relying solely on the browser’s native capabilities.
+Una aplicación web que aplica efectos de semitonos (halftone) a imágenes usando filtros SVG del lado del cliente. La aplicación procesa imágenes en tiempo real sin necesidad de servidor, dependiendo únicamente de las capacidades nativas del navegador.
 
-## Features
+## Características
 
-- Real-time halftone filters: Two types of SVG filters (`half-tone` and `half-tone-hd`)
-- Color customization: Color picker to adjust the tone of the effect
-- Client-side processing: Everything runs directly in the browser
-- Minimal interface: Simple controls for image upload, filter selection, and color adjustment
+- **Filtros de semitono en tiempo real**: Dos tipos de filtros SVG (`half-tone` y `half-tone-hd`)
+- **Personalización de color**: Selector de color para ajustar el tono del efecto
+- **Procesamiento del lado del cliente**: Todo funciona directamente en el navegador
+- **Interfaz minimalista**: Controles simples para subir imagen, seleccionar filtro y ajustar color
 
-## Technologies
+## Tecnologías
 
-- Frontend: React 18.3.1 + TypeScript 5.5.3
-- Build Tool: Vite 5.4.2 with HMR
-- Styling: TailwindCSS 3.4.1 + PostCSS
-- Icons: Lucide React 0.344.0
-- Linting: ESLint 9.9.1 with TypeScript and React rules
+- **HTML5**: Estructura semántica con elementos nativos
+- **CSS3**: Estilos modernos con soporte para `oklch()`
+- **JavaScript Vanilla**: Sin frameworks, solo JavaScript nativo
+- **SVG Filters**: Filtros avanzados para efectos de imagen
 
-## How It Works
+## ¿Cómo funciona?
 
-The application uses advanced SVG filters to create halftone effects:
+La aplicación utiliza filtros SVG avanzados para crear efectos de semitono:
 
-1. Luminance extraction: Converts the image to grayscale luminance values
-2. Threshold mapping: Splits luminance into 8 discrete levels
-3. Pattern generation: Applies circles of varying sizes based on luminance
-4. Final composition: Combines all levels to render the halftone effect
+1. **Extracción de luminancia**: Convierte la imagen a valores de luminancia en escala de grises
+2. **Mapeo de umbrales**: Divide la luminancia en 8 niveles discretos
+3. **Generación de patrones**: Aplica círculos de tamaños variables basados en la luminancia
+4. **Composición final**: Combina todos los niveles para renderizar el efecto de semitono
 
-### Filter Types
+### Tipos de filtro
 
-- `half-tone`: 8x8 pixel grid with circles ranging from 0.5 to 4.0 radius
-- `half-tone-hd`: 4x4 pixel grid with circles ranging from 0.25 to 2.0 radius for higher detail
+- **`half-tone`**: Cuadrícula de 8x8 píxeles con círculos que van de 0.5 a 4.0 de radio
+- **`half-tone-hd`**: Cuadrícula de 4x4 píxeles con círculos que van de 0.25 a 2.0 de radio para mayor detalle
 
-## Installation and Development
+## Instalación y uso
 
 ```bash
-# Clone the repository
+# Clonar el repositorio
 git clone https://github.com/Charlsz/SVG-image-filter.git
 cd SVG-image-filter
 
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Run linting
-npm run lint
+# Abrir directamente en el navegador
+# No se requieren dependencias ni servidor
 ```
 
-## Project Structure
+Simplemente abre el archivo `index.html` en tu navegador web favorito.
+
+## Estructura del proyecto
 
 ```
-├── index.html          # Main application with embedded SVG filters
-├── package.json        # Dependencies and scripts
-├── vite.config.ts      # Vite configuration
-├── eslint.config.js    # ESLint configuration
-└── tailwind.config.js  # TailwindCSS configuration
+SVG-image-filter/
+├── index.html          # Archivo principal HTML
+├── styles.css          # Estilos CSS
+├── script.js           # Lógica JavaScript
+└── README.md           # Este archivo
 ```
 
-## Configuration
+## Archivos principales
 
-### Vite
-The Vite configuration excludes `lucide-react` from dependency optimization to improve performance.
+### `index.html`
+- Estructura HTML completa con DOCTYPE, meta tags y enlaces
+- Controles de interfaz: subida de archivo, selector de filtro, selector de color
+- Definiciones SVG para ambos filtros de semitono
+- Imagen de preview con filtros aplicables
 
-### ESLint
-Configured with TypeScript and React rules, including React Hooks and React Refresh support.
+### `script.js`
+- Manejo de eventos para subida de archivos
+- Control de cambios de color en tiempo real
+- Aplicación dinámica de filtros SVG
+- Gestión del DOM para elementos interactivos
 
-## Usage
+### `styles.css`
+- Estilos modernos con `oklch()` para colores
+- Diseño responsivo para la imagen
+- Tipografía y espaciado básico
 
-1. Upload an image: Use the upload button to select an image from your device.
-2. Select a filter: Choose between "None", "half-tone", or "half-tone-hd".
-3. Customize color: Adjust the effect color using the color picker.
-4. View the result: The image is processed in real time directly in the browser.
+## Uso
 
-## Author
-
-**Charlie**  
-[Portfolio](https://charlsz.netlify.app/)  
-[GitHub](https://github.com/Charlsz)
+1. **Abrir la aplicación**: Abre `index.html` en tu navegador
+2. **Seleccionar imagen**: Usa el botón "Elegir archivo" para subir una imagen
+3. **Aplicar filtro**: Selecciona entre "None", "half-tone" o "half-tone-hd"
+4. **Personalizar color**: Usa el selector de color para cambiar el tono del efecto
+5. **Ver resultado**: El efecto se aplica instantáneamente a la imagen
