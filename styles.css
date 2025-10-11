@@ -1,5 +1,5 @@
 body {
-	background: oklch(from #fe0 .9 .064 h);
+	background: #f0f0f0;
   font-family: sans-serif;
   padding: 1rem;
 }
