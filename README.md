@@ -1,81 +1,72 @@
 # SVG Image Filter
 
-Una aplicación web que aplica efectos de semitonos (halftone) a imágenes usando filtros SVG del lado del cliente. La aplicación procesa imágenes en tiempo real sin necesidad de servidor, dependiendo únicamente de las capacidades nativas del navegador.
+A web application that applies halftone effects to images using client-side SVG filters. The app processes images in real time without needing a server, relying solely on the browser’s native capabilities.
 
-## Características
+## Features
 
-- **Filtros de semitono en tiempo real**: Dos tipos de filtros SVG (`half-tone` y `half-tone-hd`)
-- **Personalización de color**: Selector de color para ajustar el tono del efecto
-- **Procesamiento del lado del cliente**: Todo funciona directamente en el navegador
-- **Interfaz minimalista**: Controles simples para subir imagen, seleccionar filtro y ajustar color
+- **Real-time halftone filters**: Two types of SVG filters (`half-tone` and `half-tone-hd`)
+- **Color customization**: Color picker to adjust the effect tone
+- **Client-side processing**: Everything runs directly in the browser
+- **Minimalist interface**: Simple controls to upload an image, select a filter, and adjust color
 
-## Tecnologías
+## Technologies
 
-- **HTML5**: Estructura semántica con elementos nativos
-- **CSS3**: Estilos modernos con soporte para `oklch()`
-- **JavaScript Vanilla**: Sin frameworks, solo JavaScript nativo
-- **SVG Filters**: Filtros avanzados para efectos de imagen
+- **HTML5**: Semantic structure with native elements
+- **CSS3**: Modern styling with `oklch()` support
+- **Vanilla JavaScript**: No frameworks, just native JavaScript
+- **SVG Filters**: Advanced filters for image effects
 
-## ¿Cómo funciona?
+## How does it work?
 
-La aplicación utiliza filtros SVG avanzados para crear efectos de semitono:
+The application uses advanced SVG filters to create halftone effects:
 
-1. **Extracción de luminancia**: Convierte la imagen a valores de luminancia en escala de grises
-2. **Mapeo de umbrales**: Divide la luminancia en 8 niveles discretos
-3. **Generación de patrones**: Aplica círculos de tamaños variables basados en la luminancia
-4. **Composición final**: Combina todos los niveles para renderizar el efecto de semitono
+1. **Luminance extraction**: Converts the image to grayscale luminance values  
+2. **Threshold mapping**: Splits luminance into 8 discrete levels  
+3. **Pattern generation**: Applies circles of varying sizes based on luminance  
+4. **Final composition**: Combines all levels to render the halftone effect  
 
-### Tipos de filtro
+### Filter types
 
-- **`half-tone`**: Cuadrícula de 8x8 píxeles con círculos que van de 0.5 a 4.0 de radio
-- **`half-tone-hd`**: Cuadrícula de 4x4 píxeles con círculos que van de 0.25 a 2.0 de radio para mayor detalle
+- **`half-tone`**: 8x8 pixel grid with circles ranging from 0.5 to 4.0 radius  
+- **`half-tone-hd`**: 4x4 pixel grid with circles ranging from 0.25 to 2.0 radius for higher detail  
 
-## Instalación y uso
+## Installation and usage
 
 ```bash
-# Clonar el repositorio
+# Clone the repository
 git clone https://github.com/Charlsz/SVG-image-filter.git
 cd SVG-image-filter
 
-# Abrir directamente en el navegador
-# No se requieren dependencias ni servidor
+# Open directly in the browser
+# No dependencies or server required
 ```
 
-Simplemente abre el archivo `index.html` en tu navegador web favorito.
+Simply open the `index.html` file in your favorite web browser.
 
-## Estructura del proyecto
 
-```
-SVG-image-filter/
-├── index.html          # Archivo principal HTML
-├── styles.css          # Estilos CSS
-├── script.js           # Lógica JavaScript
-└── README.md           # Este archivo
-```
-
-## Archivos principales
+## Main files
 
 ### `index.html`
-- Estructura HTML completa con DOCTYPE, meta tags y enlaces
-- Controles de interfaz: subida de archivo, selector de filtro, selector de color
-- Definiciones SVG para ambos filtros de semitono
-- Imagen de preview con filtros aplicables
+- Complete HTML structure with DOCTYPE, meta tags, and links  
+- Interface controls: file upload, filter selector, color picker  
+- SVG definitions for both halftone filters  
+- Preview image with applicable filters  
 
 ### `script.js`
-- Manejo de eventos para subida de archivos
-- Control de cambios de color en tiempo real
-- Aplicación dinámica de filtros SVG
-- Gestión del DOM para elementos interactivos
+- Event handling for file uploads  
+- Real-time color change control  
+- Dynamic application of SVG filters  
+- DOM management for interactive elements  
 
 ### `styles.css`
-- Estilos modernos con `oklch()` para colores
-- Diseño responsivo para la imagen
-- Tipografía y espaciado básico
+- Modern styles with `oklch()` for colors  
+- Responsive image layout  
+- Basic typography and spacing  
 
-## Uso
+## Usage
 
-1. **Abrir la aplicación**: Abre `index.html` en tu navegador
-2. **Seleccionar imagen**: Usa el botón "Elegir archivo" para subir una imagen
-3. **Aplicar filtro**: Selecciona entre "None", "half-tone" o "half-tone-hd"
-4. **Personalizar color**: Usa el selector de color para cambiar el tono del efecto
-5. **Ver resultado**: El efecto se aplica instantáneamente a la imagen
+1. **Open the app**: Open `index.html` in your browser  
+2. **Select image**: Use the "Choose file" button to upload an image  
+3. **Apply filter**: Select between "None", "half-tone", or "half-tone-hd"  
+4. **Customize color**: Use the color picker to change the effect tone  
+5. **View result**: The effect is applied instantly to the image  
