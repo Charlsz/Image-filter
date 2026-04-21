@@ -1,11 +1,24 @@
 body {
-	background: #f0f0f0;
+  background: #f0f0f0;
   font-family: sans-serif;
   padding: 1rem;
 }
+
 img {
   max-width: 100%;
   height: auto;
   margin-top: 1rem;
   filter: none;
+  display: block;
+}
+
+#ascii-output {
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #20211A;
+  font-family: "Courier New", monospace;
+  font-size: 6px;
+  line-height: 6px;
+  white-space: pre;
+  overflow-x: auto;
 }
